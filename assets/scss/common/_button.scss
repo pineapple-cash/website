@@ -1,0 +1,352 @@
+/*===================
+Button Area 
+====================*/
+a {
+    &.btn-transparent{
+        // color: var(--color-primary);
+        @extend %transition;
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 3px;
+        @extend .theme-gradient;
+
+        &:hover{
+            color: var(--color-primary);
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            @extend .bg-theme-gradient;
+            opacity: 0.75;
+            @extend %transition;
+        }
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+}
+
+a ,
+button {
+    &.rn-btn {
+        padding: 0 23px;
+        height: 40px;
+        display: inline-block;
+        line-height: 34px;
+        border: 2px solid var(--color-primary);
+        border-radius: 4px;
+        font-size: 14px;
+        position: relative;
+        z-index: 2;
+        // font-family: Montserrat;
+        color: var(--color-primary);
+        letter-spacing: 0.2px;
+        @extend %transition;
+        text-transform: uppercase;
+
+        &.btn-opacity {
+            border: 2px solid var(--color-opacity-1);
+            color: var(--color-white);
+        }
+
+        &:hover {
+            border: 2px solid var(--color-primary);
+            transform: translateY(-3px);
+            color: #ffffff;
+            background: var(--color-primary);
+        }
+        &.btn-white {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            &:hover {
+                border-color: var(--color-primary);
+            }
+        }
+    }
+}
+
+
+button,
+a {
+    &.rn-button-style--2 {
+        color: #c6c9d8;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 2px solid #b1b4c1;
+        padding: 15px 40px;
+        border-radius: 6px;
+        display: inline-block;
+        font-weight: 500;
+        transition: 0.3s;
+        @media #{$sm-layout} {
+            padding: 9px 25px;
+        }
+        &.rn-btn-dark {
+            border: 2px solid $heading-color;
+            color: $heading-color;
+            &:hover {
+                background: $heading-color;
+                color: #fff;
+            }
+        }
+        &.border-opacity-half{
+            border-color: rgba(31, 31, 37, 0.1);
+        }
+        &.rn-btn-small {
+            padding: 10px 20px;
+        }
+        &.btn-primary-color {
+            &:hover {
+                border: 2px solid var(--color-primary);
+                background: var(--color-primary);
+                color: #ffffff;
+            }
+        }
+        &.btn-solid {
+            border: 2px solid var(--color-primary);
+            background: var(--color-primary);
+            color: #ffffff;
+        }
+        &.btn-solid {
+            background: var(--color-primary);
+            color: #ffffff;
+        }
+        &:hover{
+            background: transparent;
+            color: var(--color-primary);
+            box-shadow: 0 10px 15px 0 rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+    }
+}
+
+
+
+
+/*--------------------------
+    Button Style Two  
+---------------------------*/
+
+.button-group {
+    margin: -10px;
+    a ,
+    button {
+        margin: 10px;
+    }
+}
+
+
+/*------------------------
+    Imroz BUtton   
+--------------------------*/
+
+a,
+button {
+    &.btn-default {
+        color: var(--color-white);
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 16px 40px;
+        border-radius: 500px;
+        display: inline-block;
+        font-weight: 500;
+        transition: all .4s ease-in-out;
+        background-size: 152% 100%;
+        background: var(--color-primary);
+        border: 2px solid var(--color-primary);
+        &:hover {
+            transition: all .4s ease-in-out;
+            background: transparent;
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        &.btn-hover-white {
+            &:hover {
+                border-color: var(--color-white);
+                color: var(--color-white);
+            }
+        }
+        &.size-md {
+            padding: 10px 25px;
+            letter-spacing: 1px;
+            font-size: 15px;
+        }
+
+        &.size-sm {
+            padding: 10px 15px;
+            font-size: 13px;
+            letter-spacing: 0;
+            line-height: 13px;
+        }
+
+        &.btn-large {
+            padding: 26px 60px;
+            @media #{$md-layout} {
+                padding: 16px 35px;
+            }
+            @media #{$sm-layout} {
+                padding: 16px 35px;
+            }
+        }
+
+        &.color-secondary {
+            border: 2px solid var(--color-secondary);
+            background-color: var(--color-secondary);
+            &:hover {
+                background-color: transparent;
+                border-color: var(--color-secondary);
+                color: var(--color-secondary);
+            }
+        }
+
+        &.btn-border {
+            background-color: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            &.btn-opacity {
+                border: 2px solid var(--color-opacity-1);
+                color: var(--color-white);
+            }
+
+            &:hover {
+                color: var(--color-white);
+                border-color: var(--color-primary);
+                background-color: var(--color-primary);
+            }
+
+            &.color-secondary {
+                border: 2px solid var(--color-secondary);
+                color: var(--color-secondary);
+                &:hover {
+                    color: var(--color-white);
+                    border-color: var(--color-secondary);
+                    background-color: var(--color-secondary);
+                }
+            }
+            &.btn-white {
+                border: 2px solid var(--white);
+                color: var(--color-white);
+                &:hover {
+                    color: var(--color-primary);
+                    border-color: var(--color-white);
+                    background-color: var(--color-white);
+                }
+            }
+        }
+
+        &.btn-dark {
+            color: var(--color-white);
+            border-color:var(--color-dark);
+            background-color: var(--color-dark);
+            &:hover {
+                transition: all .4s ease-in-out;
+                background: transparent;
+                border-color: var(--color-dark);
+                color: var(--color-dark);
+            }
+            &.btn-border {
+                background-color: transparent;
+                border: 2px solid var(--color-dark);
+                color: var(--color-dark);
+                &:hover {
+                    color: var(--color-white);
+                    border-color: var(--color-dark);
+                    background-color: var(--color-dark);
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+/*-----------------------
+    Video Button  
+-------------------------*/
+
+.yu2fvl {
+    z-index: 9999;
+    top: 0;
+}
+.yu2fvl-iframe {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+.yu2fvl-overlay {
+    z-index: 9998;
+    background: #000;
+    opacity: 0.8;
+}
+
+.yu2fvl-close {
+    position: absolute;
+    top: 1px;
+    left: 100%;
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #f10 !important;
+    background-color: #f10 !important;
+    color: #ffffff;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+@media #{$md-layout} {
+    .yu2fvl-close {
+        left: auto;
+        right: 0;
+        top: auto;
+        bottom: 100%;
+    }
+}
+@media #{$sm-layout} {
+    .yu2fvl-close {
+        left: auto;
+        right: 0;
+        top: auto;
+        bottom: 100%;
+    }
+    .video {
+        h2 {
+            color: #ffffff;
+            font-size: 32px;
+        }
+
+        h4 {
+            font-size: 22px;
+            line-height: 32px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

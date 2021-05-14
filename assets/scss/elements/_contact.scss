@@ -1,0 +1,137 @@
+// Contact Styles 
+
+.contact-form--1 {
+    label {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+        padding: 0 20px;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        height: 50px;
+        line-height: 46px;
+        margin-bottom: 20px;
+        outline: none;
+        color: $heading-color;
+        font-size: 15px;
+        letter-spacing: 0.1px;
+        &:focus {
+            border-color: var(--color-primary);
+        }
+    }
+    textarea {
+        height: 120px;
+    }
+}
+
+/*==========================
+    Contact Address 
+============================*/
+
+.rn-address {
+    margin-top: 30px;
+    padding: 40px;
+    border-radius: 10px;
+    padding-top: 40px;
+    background: #fff;
+    padding-bottom: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    .icon {
+        color: var(--color-primary);
+        border-radius: 100%;
+        font-size: 33px;
+        display: inline-block;
+        margin-bottom: 12px;
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .inner {
+        h4 {
+            &.title {
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 0;
+            color: rgba(29, 29, 36, 0.75);
+            @media #{$lg-layout} {
+                font-size: 16px;
+            }
+            @media #{$md-layout} {
+                font-size: 16px;
+            }
+            @media #{$sm-layout} {
+                font-size: 16px;
+            }
+            br {
+                
+                @media #{$lg-layout} {
+                    display: none;
+                }
+
+                @media #{$md-layout} {
+                    display: none;
+                }
+
+                @media #{$sm-layout} {
+                    display: none;
+                }
+            }
+            a {
+                color: rgba(29, 29, 36, 0.75);
+                @extend %transition;
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+    &:hover {
+        transform: translateY(-5px)
+    }
+}
+
+input,
+textarea {
+    @extend %transition;
+}
+
+.blog-comment-form .inner .rnform-group input:focus ,
+.blog-comment-form .inner .rnform-group textarea:focus {
+    border-color: var(--color-primary) ;
+}
+
+
+/* Address  */
+.im_address {
+    span {
+        display: inline-block;
+        font-size: 14px;
+    }
+    .link {
+        color: var(--color-heading);
+        font-weight: 700;
+        font-size: 17px;
+        display: inline-block;
+        margin-left: 18px;
+        transition: 0.3s;
+        @media #{$sm-layout} {
+            font-size: 14px;
+        }
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}
+

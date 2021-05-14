@@ -1,0 +1,167 @@
+.rn-popup-mobile-menu {
+    z-index: 9999;
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    
+    .inner {
+        width: 320px;
+        z-index: 999;
+        position: absolute;
+        background-color: #fff;
+        height: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 0 rgba(149, 161, 158, 0.7);
+        opacity: 0;
+        left: -150px;
+        transition: all .5s ease-out;
+        .popup-menu-top {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logo {
+                img {
+                    max-height: 56px;
+                }
+            }
+            .close-menu {
+                span {
+                    color: var(--color-body);
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &.menu-open {
+        visibility: visible;
+        opacity: 1;
+        .inner {
+            opacity: 1;
+            left: 0;
+            overflow-y: auto;
+        }
+        .mainmenunav {
+            ul {
+                &.mainmenu {
+                    @media #{$md-layout} {
+                        right: 0;
+                    }
+                    @media #{$sm-layout} {
+                        right: 0;
+                    }
+                    @media #{$large-mobile} {
+                        width: 86vw;
+                        padding: 54px 20px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    ul {
+        &.mainmenu {
+            @extend %liststyle;
+            padding: 5px 20px;
+            > li {
+                border-bottom: 1px solid var(--color-border);
+                &:last-child {
+                    border: 0 none;
+                }
+            }
+            li {
+                margin: 0;
+                padding: 12px 0;
+                a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #1f1f25;
+                }
+                &.has-droupdown {
+                    position: relative; 
+                    > a {
+                        position: relative;
+                        display: block;
+
+                        &::after{
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 7px 7px 0 7px;
+                            border-color: $heading-color transparent transparent transparent;
+                            position: absolute;
+                            content: "";
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+                        }
+                        &.open {
+                            color: var(--color-primary);
+                            &::after{
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 0 7px 7px 7px;
+                                border-color: transparent transparent var(--color-primary) transparent;
+                            }
+                        } 
+                    }
+                    .submenu {
+                        display: none;
+                        padding-left: 20px;
+                        padding-top: 10px;
+                    }
+                }
+                .submenu {
+                    li {
+                        margin: 0;
+                        padding: 3px 0;
+                        a {
+                            font-size: 14px;
+                            padding: 2px 10px;
+                            color: #1f1f25;
+                        }
+                    }
+                }
+                ul {
+                    @extend %liststyle;
+                }
+            }
+
+            &.nav {
+                flex-direction: column;
+                &.nav-pills {
+                    .nav-link {
+                        padding: 0;
+                        transition: var(--transition);
+                        &.active ,
+                        &:hover {
+                            color: var(--color-primary);
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rn-popup-mobile-menu.menu-open .humberger-menu span {
+    opacity: 0;
+}

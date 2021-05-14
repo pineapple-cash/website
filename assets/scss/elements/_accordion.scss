@@ -1,0 +1,63 @@
+.accodion-style--1 {
+    .rn-card {
+        border: none !important;
+        overflow: hidden;
+        .rn-card-header {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            a {
+                background: none;
+                font-size: 16px;
+                font-weight: 600;
+                position: relative;
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+                border: none;
+                box-shadow: none;
+                color: var(--color-heading);
+
+                &[aria-disabled="true"],
+                &[aria-expanded="true"] {
+                    &::after{
+                        width: 100%;
+                        background: var(--color-primary);
+                    }
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                }
+               
+                &::before{
+                    display: none;
+                    border: none !important;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .rn-card-body {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            p {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+        & + .rn-card {
+            margin-top: 10px;
+        }
+    }
+}

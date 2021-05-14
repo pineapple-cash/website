@@ -1,0 +1,187 @@
+
+:root {
+    //Themes colors
+    --color-primary: #FD4766;
+    --color-secondary: #337DFF;
+
+    --color-secondary-rgb: rgba(253, 71, 102 ,1);
+    --color-tertiary: #010001;
+    --color-dark: #000000;
+    // Typo Color 
+    --color-heading: #1f1f25;
+    --color-body: #1d1d24;
+
+    // Gery Colors 
+    --color-gray: rgba(29,29,36,.75);
+    --color-midgray: #e9ecef;
+    --color-opacity-1: hsla(0,0%,100%,.2);
+    
+    --color-light: #E4E6EA;
+    --color-lighter: #CED0D4;
+    --color-lightest: #F0F2F5;
+    --color-border: #E6E6E6;
+    --color-white: #ffffff;
+    
+    // Notify Colors 
+    --color-success: #3EB75E;
+    --color-danger: #FF0003;
+    --color-warning: #FF8F3C;
+    --color-info: #1BA2DB;
+
+
+    //Social icon colors
+    --color-facebook: #3B5997;
+    --color-twitter: #1BA1F2;
+    --color-youtube: #ED4141;
+    --color-linkedin: #0077B5;
+    --color-pinterest: #E60022;
+    --color-instagram: #C231A1;
+    --color-vimeo: #00ADEF;
+    --color-twitch: #6441A3;
+    --color-discord: #7289da;
+
+
+    // Extra Color 
+    --color-extra01: #666666;
+    --color-extra02: #606770;
+    --color-extra03: #FBFBFD;
+    --color-extra04: #1A1A1A;
+    --color-extra05: #242424;
+    
+    //Border-radius
+    --radius: 10px;
+    --radius-big: 16px;
+    --radius-small: 6px;
+    --border-width: 2px;
+
+    //Font weight
+    //primary font
+    --p-light: 300;
+    --p-regular: 400;
+    --p-medium: 500;
+    --p-semi-bold: 600;
+    --p-bold: 700;
+    --p-extra-bold: 800;
+    --p-black: 900;
+
+    //secondary font
+    --s-light: 300;
+    --s-regular: 400;
+    --s-medium: 500;
+    --s-bold: 700;
+    --s-black: 900;
+
+    //Shadows
+    --shadow-primary: 0px 4px 10px rgba(37, 47, 63, 0.1);
+    --shadow-light: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
+    --shadow-dark: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+
+
+    //transition easing
+    --transition: 0.3s;
+
+    //Font Family
+    --font-primary: 'Poppins', sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+    --font-awesome: 'Font Awesome 5 Pro';
+
+    
+    //Fonts Size
+    --font-size-b1: 18px;
+    --font-size-b2: 16px;
+    --font-size-b3: 14px;
+    --font-size-b4: 12px;
+
+    //Line Height
+    --line-height-b1: 1.67; //28px
+    --line-height-b2: 1.5; //24px
+    --line-height-b3: 1.6; //22px
+    --line-height-b4: 1.3; //16px
+
+    
+    // Heading Font 
+    --h1: 44px; //52px 1.29
+    --h2: 36px; //44px 1.23
+    --h3: 30px; // 34px 1.14
+    --h4: 24px; //30px  1.25
+    --h5: 18px; //22px 1.24
+    --h6: 16px; //20px 1.25
+}
+
+
+
+
+
+
+
+//===== Colors =====//
+// $theme-color: #f9004d;
+// $theme-color-alt: #ee076e;
+$body-color: #1d1d24;
+$heading-color: #1f1f25;
+$border-color: #d4d4d4;
+$black-color: #010001;
+$white:#fff;
+
+
+
+
+/*===============================
+    Font Family 
+=================================*/
+$body-font: 'Poppins', sans-serif;
+$heading-font: 'Poppins', sans-serif;
+
+
+// Heading Font List
+$font-1: 'Poppins', sans-serif;
+$fontList: $font-1;
+
+
+/*===============================
+    Color Variation 
+=================================*/
+$color-1:  var(--color-primary);
+$color-2:  #f4769a;
+$color-3:  #2f21b3;
+$color-4:  #8956e2;
+$colorList: $color-1, $color-2 ,$color-3 ,$color-4;
+
+
+//===== Line Height =====//
+$body-line-height: 1.714286;
+
+//==== Font size =====//
+$body-font-size: 14px;
+$h1: 64px;
+$h2: 54px;
+$h3: 24px;
+$h4: 20px;
+$h5: 18px;
+$h6: 16px;
+
+//===== Social Colors =====//
+$facebook : #3B5998;
+$twitter : #00ACEE;
+$google-plus : #DD4B39;
+$pinterest : #C8232C;
+$linkedin : #0E76A8;
+$flickr : #FF0084;
+$google : #dd4b39;
+$youtube : #cd201f;
+
+
+
+
+// Layouts
+$smlg-device: 'only screen and (max-width: 1199px)';
+$extra-device: 'only screen and (min-width: 1600px) and (max-width: 1919px)';
+$laptop-device: 'only screen and (min-width: 1200px) and (max-width: 1599px)';
+$lg-layout: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md-layout:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm-layout:'only screen and (max-width: 767px)';
+$large-mobile: 'only screen and (max-width: 575px)';
+/* container 450px*/
+$small-mobile: 'only screen and (max-width: 479px)';
+/* container 300px*/
+

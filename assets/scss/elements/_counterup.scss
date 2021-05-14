@@ -1,0 +1,256 @@
+/*========================
+    Counterup Area 
+==========================*/
+
+// Counter Style One
+.counterup_style--1 {
+    text-align: center;
+    margin-top: 40px;
+
+    h5 {
+        &.counter {
+            font-size: 72px;
+            line-height: 80px;
+            display: inline-block;
+            margin-bottom: 17px;
+            position: relative;
+            display: inline-block;
+            color: var(--color-primary);
+            margin-left: -20px;
+
+           
+            @media #{$sm-layout} {
+                font-size: 45px;
+                line-height: 56px;
+                margin-bottom: 5px;
+                margin-left: -11px;
+            }
+
+            &::after {
+                right: -26px;
+                position: absolute;
+                top: -17px;
+                font-size: 40px;
+                content: "+";
+            }
+        }
+    }
+
+    p {
+        &.description {
+            font-size: 18px;
+            line-height: 30px;
+            padding: 0 5%;
+            color: rgba(29, 29, 36, 0.75);
+
+            @media #{$md-layout} {
+                font-size: 16px;
+                line-height: 28px;
+                padding: 0;
+            }
+
+            @media #{$sm-layout} {
+                font-size: 16px;
+                line-height: 28px;
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+.rn-paralax-counterup {
+    .counterup_style--1 {
+        text-align: center;
+
+        h5 {
+            &.counter {
+                color: var(--color-primary);
+            }
+        }
+
+        p {
+            &.description {
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+// Counter Style Two
+.counterup_style--2 {
+    text-align: center;
+
+    h5 {
+        &.counter {
+            font-size: 50px;
+            line-height: 60px;
+            color: var(--color-primary);
+            display: inline-block;
+            margin-bottom: 10px;
+            @media #{$sm-layout} {
+                font-size: 36px;
+                line-height: 46px;
+            }
+        }
+    }
+    h4 {
+        &.description {
+            font-size: 16px;
+            line-height: 30px;
+            padding: 0 10%;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Counter White Cersion
+.theme-text-white {
+    .counterup_style--1 {
+        h5 {
+            &.counter {
+                color: #ffffff;
+            }
+        }
+
+        p {
+            &.description {
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+
+/*----------------------------
+    Counterup New Style  
+------------------------------*/
+.bg_color--1 {
+    .im_counterup {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+}
+
+
+.im_counterup {
+    height: 280px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    .inner {
+        .icon {
+            height: 50px;
+            width: 50px;
+            margin: 0 auto;
+            line-height: 47px;
+            border-radius: 100%;
+            svg {
+                stroke-width: 1;
+                font-size: 45px;
+            }
+        }
+        .counter {
+            font-size: 54px;
+            font-weight: 600;
+            line-height: 62px;
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 7px;
+            @media #{$md-layout} {
+                font-size: 44px;
+                font-weight: 600;
+                line-height: 52px;
+            }
+            @media #{$sm-layout} {
+                font-size: 44px;
+                font-weight: 600;
+                line-height: 52px;
+            }
+            &::after {
+                content: "+";
+            }
+        }
+        .description {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+}
+
+
+
+.im_single_counterup {
+    .im_counterup {
+        .inner {
+            .icon {
+                // background-color: rgba(51,125,255,0.3);
+                svg {
+                    color: var(--color-primary);
+                    width: 40px;
+                    height: 38px;
+                }
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        .im_counterup {
+            .inner {
+                .icon {
+                    // background-color: rgba(250,94,93,0.3);
+                    svg {
+                        color: var(--color-secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        .im_counterup {
+            .inner {
+                .icon {
+                    // background-color: rgba(249,141,94,0.3);
+                    svg {
+                        color: var(--color-warning);
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-child(4) {
+        .im_counterup {
+            .inner {
+                .icon {
+                    // background-color: rgba(118,206,68,0.3);
+                    svg {
+                        color: var(--color-success);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

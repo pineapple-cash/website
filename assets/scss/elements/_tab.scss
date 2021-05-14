@@ -1,0 +1,90 @@
+/* Tab Style  */
+
+ul {
+    &.tab-style--1 {
+        @extend %liststyle;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid var(--color-border);
+        border-radius: 50em;
+        @media #{$sm-layout} {
+            border-radius: inherit;
+            border: 0 none;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 14px;
+        }
+        li {
+            &.nav-item {
+                a {
+                    cursor: pointer;
+                    padding: .83333em 34px;
+                    margin: -1px -2px -1px;
+                    border-radius: 50em;
+                    font-size: .88889em;
+                    font-weight: 600;
+                    transition: all 0.45s cubic-bezier(0, 0, 0.2, 1);
+                    display: inline-block;
+                    color: var(--color-gray);
+                    border: 0 none;
+                    transition: 0.3s;
+                    @media #{$lg-layout} {
+                        padding: .83333em 18px;
+                        font-size: 14px;
+                    }
+
+                    @media #{$md-layout} {
+                        padding: .83333em 18px;
+                        font-size: 14px;
+                    }
+
+                    @media #{$sm-layout} {
+                        padding: .83333em 20px;
+                    }
+                    
+                    &.active {
+                        background-color: var(--color-primary);
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single-tab-content {
+    padding-top: 20px;
+    p {
+        font-weight: 300;
+        color: #717173;
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+.single-tab-content {
+    ul {
+        &.list-style--1 {
+            li {
+                margin-bottom: 10px;
+            }
+        }
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            color: #7e7e7e;
+            font-size: 16px;
+            line-height: inherit;
+            margin-bottom: 15px;
+            font-weight: 300;
+            a {
+                font-weight: 500;
+                display: block;
+                color: #717173;
+                span {
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

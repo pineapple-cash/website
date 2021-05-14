@@ -1,0 +1,111 @@
+/* Social icon Styles  */
+
+ul {
+    &.social-share {
+        padding: 0;
+        margin: 0;
+        margin: -6px;
+        li {
+            margin: 6px;
+            a {
+                width: 40px;
+                display: inline-block;
+                height: 40px;
+                border: 2px solid rgba(198, 201, 216, 0.75);
+                line-height: 35px;
+                color: rgba(198, 201, 216, 0.75);
+                border-radius: 100%;
+                text-align: center;
+                font-size: 14px;
+                @extend %transition;
+            }
+            &:hover {
+                a {
+                    background: var(--color-primary);
+                    border-color: var(--color-primary);
+                    color: #ffffff;
+                    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+                    transform: translateY(-3px);
+                }
+            }
+        }
+        &.color-theme{
+            li {
+                a {
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                    &:hover {
+                        background: var(--color-primary);
+                        border-color: var(--color-primary);
+                        color: #ffffff;
+                    }
+                }
+
+            }
+        }
+        &.rn-lg-size {
+            margin-top: 0 !important;
+            li {
+                a {
+                    width: 50px;
+                    height: 50px;
+                    line-height: 47px;
+                    font-size: 16px;
+                }
+            }
+        }
+        &.social-style--2 {
+            li{
+                a {
+                    border: 0 none;
+                    width: 30px;
+                    height: auto;
+                    text-align: left;
+                    line-height: inherit;
+                    font-size: 16px;
+                }
+                &:hover{
+                    a {
+                        background: transparent;
+                        box-shadow: none;
+
+                    }
+                }
+            }
+            &.color-theme{
+                li {
+                    a {
+                        color: var(--color-primary);
+                        &:hover {
+                            color: currentColor;
+                        }
+                    }
+
+                }
+            }
+            &.color-black{
+                li {
+                    a {
+                        color: $body-color;
+                        opacity: 0.8;
+                        &:hover {
+                            color: var(--color-primary);
+                            opacity: 1;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,536 @@
+/*==============================
+ *  Utilities
+=================================*/
+/*====================================
+    Google Font  
+===================================*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800,900|Poppins:300,400,500,600,700,700i&display=swap');
+
+/*----------------------------------------
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+-------------------------------------*/
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1260px;
+    }
+}
+.hidden {
+    display: none;
+}
+.fix{
+    overflow: hidden;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.poss_relative {
+    position: relative;
+}
+
+.poss_absolute {
+    position: absolute;
+}
+.lineheight--1 {
+    line-height: 1 !important;
+}
+
+.lineheight--1-5 {
+    line-height: 1.5!important;
+}
+
+.lineheight--1-8 {
+    line-height: 1.8!important;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.wrapper {
+    position: relative;
+}
+
+/* Define Colors */
+.theme-color {
+    color: var(--color-primary);
+}
+.rn-text-white {
+    color: #c6c9d8 !important;
+}
+
+.im-separator {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: var(--color-opacity-1);
+        max-width: 1230px;
+        height: 1px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+/*===============================
+    Background Color 
+=================================*/
+
+@include config-bg-colors('bg_color--',
+'1'$white,
+'2'var(--color-primary),
+'3'#FAFAFB,
+'4'#1a1b1f,
+'5'#f9f9f9,
+'6'$black-color,
+'7'var(--color-midgray),
+'8'#0e1525,
+'9'#091020,
+'10'#151515
+);
+
+
+/*===========================
+    Background Image 
+=============================*/
+.bg_overlay:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $black-color;
+    opacity: 0.57;
+}
+
+.bg_overlay {
+    position: relative;
+}
+
+
+.bg_image {
+    @extend %bgImagePosition;
+}
+
+
+@for $i from 1 through 35 {
+    .bg_image--#{$i} {
+        // background-image: url(assets/images/bg/bg-image-#{$i}.jpg) !important;
+        background-image: url(../images/bg/bg-image-#{$i}.jpg) !important;
+    }
+}
+
+
+
+@for $i from 1 through 80 {
+    .font--#{$i}{
+        font-size: #{$i}px !important;
+    }
+}
+
+
+
+p:last-child{
+    margin-bottom: 0;
+}
+
+/*=========================
+    Text specialized 
+==========================*/
+.text-italic {
+    font-style: italic;
+}
+.text-normal {
+    font-style: normal;
+}
+.text-underline {
+    font-style: underline;
+}
+
+
+/* Height and width */
+.fullscreen {
+    min-height: 100vh;
+    width: 100%;
+    @media #{$sm-layout} {
+        min-height: auto;
+    }
+    &.empty-div {
+        pointer-events: none;
+        background: transparent;
+    }
+
+}
+
+/*===================
+Custom Row
+======================*/
+.row--0 {
+    margin-left: -0px;
+    margin-right: -0px;
+
+    &>[class*="col"] {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.row--5 {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    &>[class*="col"] {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.row--10 {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    &>[class*="col"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.row--20 {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    // Responsive
+    @media #{$laptop-device} {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    @media #{$lg-layout} {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    @media #{$md-layout} {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    @media #{$sm-layout} {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+
+    &>[class*="col"],
+    &>[class*="col-"] {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        // Responsive
+        @media #{$laptop-device} {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @media #{$lg-layout} {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @media #{$md-layout} {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        @media #{$sm-layout} {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    }
+}
+
+.row--35 {
+    margin-left: -35px;
+    margin-right: -35px;
+
+    // Responsive
+    @media #{$laptop-device} {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    @media #{$lg-layout} {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    @media #{$md-layout} {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    @media #{$sm-layout} {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+
+    &>[class*="col"],
+    &>[class*="col-"] {
+        padding-left: 35px;
+        padding-right: 35px;
+
+        // Responsive
+        @media #{$laptop-device} {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        @media #{$lg-layout} {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        @media #{$md-layout} {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        @media #{$sm-layout} {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    }
+}
+
+.row--25 {
+    margin-left: -25px;
+    margin-right: -25px;
+
+    // Responsive
+    @media #{$laptop-device} {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    @media #{$lg-layout} {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    @media #{$md-layout} {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    @media #{$sm-layout} {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+
+    &>[class*="col"],
+    &>[class*="col-"] {
+        padding-left: 25px;
+        padding-right: 25px;
+
+        // Responsive
+        @media #{$laptop-device} {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        @media #{$lg-layout} {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        @media #{$md-layout} {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        @media #{$sm-layout} {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    }
+}
+
+
+/*===========================
+    Input Placeholder
+=============================*/
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+
+/*=============================
+	Overlay styles 
+==============================*/
+
+[data-overlay],
+[data-black-overlay],
+[data-white-overlay] ,
+[data-theme-overlay] {
+    position: relative;
+    z-index: 1;
+}
+
+[data-overlay]>div,
+[data-overlay]>*,
+[data-black-overlay]>div,
+[data-black-overlay]>*,
+[data-white-overlay]>div,
+[data-white-overlay]>* ,
+[data-theme-overlay]>div,
+[data-theme-overlay]>* {
+    position: relative;
+    z-index: 1;
+}
+
+[data-overlay]:before,
+[data-black-overlay]:before,
+[data-white-overlay]:before,
+[data-theme-overlay]:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+[data-overlay]:before {
+    background-color: var(--color-primary);
+}
+
+[data-black-overlay]:before {
+    background-color: $black-color;
+}
+
+[data-white-overlay]:before {
+    background-color: #b4abab;
+}
+
+@for $i from 1 through 10 {
+    [data-overlay="#{$i}"]:before,
+    [data-black-overlay="#{$i}"]:before,
+    [data-white-overlay="#{$i}"]:before {
+        opacity: #{$i * 0.10};
+    }
+}
+
+
+/*------------------------------
+    Scroll Up 
+--------------------------------*/
+#scrollUp {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    border: 3px solid #eeeeee;
+    color: $heading-color;
+    right: 20px;
+    bottom: 60px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 50px;
+    z-index: 9811 !important;
+    @media #{$sm-layout} {
+        display: none !important;
+    }
+    & i {
+        display: block;
+        line-height: 34px;
+        font-size: 22px;
+    }
+
+    &:hover {
+        & i {
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+
+// Contact Form
+.form-message {
+    margin-bottom: 0;
+    text-align: center;
+
+    &.error {
+        margin-top: 20px;
+        color: #f80707;
+    }
+
+    &.success {
+        margin-top: 20px;
+        color: #0d8d2d;
+    }
+}
+
+
+
+.thumb, .thumbnail{
+    img{
+        border-radius: 6px;
+    }
+}
+img.react-parallax-bgimage {
+    object-fit: contain;
+}

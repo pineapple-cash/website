@@ -1,0 +1,124 @@
+/*--------------------------
+Call To Action Wrapper 
+-----------------------------*/
+.call-to-action {
+    background: var(--color-primary);
+    position: relative;
+    z-index: 2;
+    .inner {
+        > span {
+            color: #fff;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: block;
+            margin-bottom: 9px;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 52px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+            padding: 0 10%;
+            margin-bottom: 0;
+            @media #{$md-layout} {
+                font-size: 42px;
+            }
+            @media #{$sm-layout} {
+                font-size: 38px;
+            }
+        }
+        a {
+            &.rn-button-style--2 {
+                margin-top: 30px;
+
+                &:hover {
+                    background: #ffffff;
+                    border-color: #ffffff;
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+    &.bg_image {
+        &::before {
+            display: none;
+        }
+    }
+    &.callto-action-style-2 {
+        .inner {
+            h2 {
+                color: #ffffff;
+                font-size: 52px;
+                font-weight: 600;
+                position: relative;
+                margin-bottom: 30px;
+                font-family: 'Montserrat', sans-serif;
+                padding-bottom: 14px;
+                @media #{$md-layout} {
+                    font-size: 42px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                @media #{$sm-layout} {
+                    font-size: 42px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background: #fff;
+                    width: 100px;
+                    height: 2px;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            p {
+                color: #fff;
+                font-size: 28px;
+                line-height: 40px;
+                margin: 0;
+                padding: 0 16%;
+                font-weight: 300;
+                letter-spacing: 2px;
+                @media #{$md-layout} {
+                    padding: 0;
+                }
+                @media #{$sm-layout} {
+                    padding: 0;
+                }
+            }
+        }
+        .bg_image--30 {
+            background-attachment: fixed;
+        }
+    } 
+    
+    &.bg_color--6 {
+        background: $black-color;
+    }
+}
+
+
+.im-call-to-action-area {
+    h2 {
+        @media #{$md-layout} {
+            font-size: 26px;
+        }
+        @media #{$sm-layout} {
+            font-size: 26px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
