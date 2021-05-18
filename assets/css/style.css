@@ -67,7 +67,7 @@
 ***************************************/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800,900|Poppins:300,400,500,600,700,700i&display=swap");
 :root {
-  --color-primary: #FD4766;
+  --color-primary: #f0f71c;
   --color-secondary: #337DFF;
   --color-secondary-rgb: rgba(253, 71, 102 ,1);
   --color-tertiary: #010001;
@@ -725,12 +725,12 @@ p:last-child {
   -webkit-text-fill-color: transparent; }
 
 .bg-theme-gradient, .im-hover::after, .footer-style-01 .footer-link ul.ft-link li a::after, .footer-style-01 .ft-text p a::after, a.btn-transparent::after {
-  background: linear-gradient(120deg, #1C99FE 20.69%, #7644FF 50.19%, #FD4766 79.69%);
+  background: linear-gradient(120deg, #0dc616 20.69%, #bfff44 50.19%, #f1fe1c 79.69%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--color-primary)', endColorstr='var(--color-secondary)',GradientType=1 ); }
 
 .theme-gradient, a.btn-transparent, .section-title span.subtitle {
   background: var(--color-primary);
-  background: linear-gradient(120deg, #1C99FE 20.69%, #7644FF 50.19%, #FD4766 79.69%);
+  background: linear-gradient(120deg, #0dc616 20.69%, #bfff44 50.19%, #f1fe1c 79.69%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--color-primary)', endColorstr='var(--color-secondary)',GradientType=1 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -7869,7 +7869,7 @@ a.rn-button-style--2 {
 --------------------------*/
 a.btn-default,
 button.btn-default {
-  color: var(--color-white);
+  color: var(--color-dark);
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -7933,7 +7933,7 @@ button.btn-default {
       color: var(--color-white); }
     a.btn-default.btn-border:hover,
     button.btn-default.btn-border:hover {
-      color: var(--color-white);
+      color: var(--color-dark);
       border-color: var(--color-primary);
       background-color: var(--color-primary); }
     a.btn-default.btn-border.color-secondary,
