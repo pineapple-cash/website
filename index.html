@@ -13,6 +13,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
+
     <!-- CSS Style -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/plugins/themify-icons.css">
@@ -739,7 +740,11 @@ Your browser does not support the audio element.
     </div>
     <!-- ENd Roadmap Area -->
 
-        <script>
+        
+    
+
+
+    <script>
         
         /*
  * Basic Count Up from Date and Time
@@ -765,15 +770,33 @@ function countUpFromTime(countFrom, id) {
 
   var idEl = document.getElementById(id);
   idEl.getElementsByClassName('days')[0].innerHTML = days;
-  idEl.getElementsByClassName('hours')[0].innerHTML = hours;
-  idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
-  idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
 
   clearTimeout(countUpFromTime.interval);
-  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000); 
 }
 
         </script>
+
+              
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+
+  
+
+
+  $.ajax({
+    url: "https://cors.bridged.cc/?https://app.cors.bridged.cc/?method=GET&url=https://cdn.syndication.twimg.com&path=/widgets/followbutton/info.json&params=%5B%7B%22key%22:%22screen_names%22,%22value%22:%22pnapltoken%22,%22active%22:true%7D%5D",
+    dataType : 'jsonp',
+    crossDomain : true
+  }).done(function(data) {
+    $("twitter-followers").text(data[0]['followers_count']);
+  });
+
+
+ </script>
+
+
 
         
 
@@ -811,7 +834,7 @@ function countUpFromTime(countFrom, id) {
                                     <i class="fab fa-twitter fa-3x" style="color: #1DA1F2"></i>
                                 </div>
                                 <h2 class="counter">
-                                    <span>85</span>
+                                    <span id="twitter-followers">1</span>
                                 </h2>
                                 <p class="description" style="color:#b9b9b9">Twitter Followers</p>
                             </div>
