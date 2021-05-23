@@ -786,7 +786,7 @@ function countUpFromTime(countFrom, id) {
 
 
   $.ajax({
-    url: "https://cors.bridged.cc/?https://app.cors.bridged.cc/?method=GET&url=https://cdn.syndication.twimg.com&path=/widgets/followbutton/info.json&params=%5B%7B%22key%22:%22screen_names%22,%22value%22:%22pnapltoken%22,%22active%22:true%7D%5D",
+    url: "https://cors.bridged.cc/?https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=pnapltoken",
     dataType : 'jsonp',
     crossDomain : true
   }).done(function(data) {
