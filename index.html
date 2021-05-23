@@ -777,21 +777,20 @@ function countUpFromTime(countFrom, id) {
 
         </script>
 
-              
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <script type="text/javascript">
 
 
-  
 
-
-  $.ajax({
-    url: "https://api.allorigins.win/raw?url=https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=pnapltoken",
-    dataType : 'jsonp',
-    crossDomain : true
-  }).done(function(data) {
-    $("twitter-followers").text(data[0]['followers_count']);
+ fetch('https://api.allorigins.win/raw?url=https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=pnapltoken').then(function(response) {
+  // response.json() returns a promise, use the same .then syntax to work with the results
+  response.json().then(function(users){
+    // users is now our actual variable parsed from the json, so we can use it
+    users.forEach(function(user){
+      document.getElementById("twitter-followers").innerHTML = (user.followers_count)
+    });
   });
+}).catch(err => console.error(err));
 
 
  </script>
