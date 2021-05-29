@@ -797,6 +797,43 @@ function countUpFromTime(countFrom, id) {
 
 
 
+ 
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+   var ExternalURL = "tgstat.com/en/channel/@addStickers"; // This address must not contain any leading "http://"
+   var ContentLocationInDOM = ".columns.large-2.medium-4.small-6.margin-bottom15 > div > .align-center > #text"; // If you're trying to get sub-content from the page, specify the "CSS style" jQuery syntax here, otherwise set this to "null"
+
+   $(document).ready(loadContent);
+   function loadContent()
+   {
+      var QueryURL = "anyorigin.com/get?url=" + ExternalURL;
+      $.getJSON(QueryURL, function(data){
+         if (data && data != null && typeof data == "object" && data.contents && data.contents != null && typeof data.contents == "string")
+         {
+            data = data.contents.replace();
+            if (data.length > 0)
+            {
+               if (ContentLocationInDOM && ContentLocationInDOM != null && ContentLocationInDOM != "null")
+               {
+                  $('#telegramMembers').html($(ContentLocationInDOM, data));
+               }
+               else
+               {
+                  $('#telegramMembers').html(data);
+               }
+            }
+         }
+      });
+   }
+</script>
+
+
+
+
+
+
         
 
     <!-- Community section -->
@@ -821,7 +858,9 @@ function countUpFromTime(countFrom, id) {
                                 <div class="icon">
                                     <i class="fab fa-telegram-plane fa-3x" style="color: #0088cc"></i>
                                 </div>
-                                <h2 class="counter"><span>2</span></h2>
+                                <h2 class="counter">
+                                    <span id="telegramMembers">0</span>
+                                </h2>
                                 <p class="description" style="color:#b9b9b9">Telegram Members</p>
                             </div>
                         </div>
