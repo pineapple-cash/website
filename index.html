@@ -808,7 +808,7 @@ function countUpFromTime(countFrom, id) {
     $(document).ready(loadContent);
    function loadContent()
    {
-      var QueryURL = "https://api.codetabs.com/v1/proxy/?quest=" + ExternalURL + "&callback=?";
+      var QueryURL = "https://api.codetabs.com/v1/proxy/?quest=" + ExternalURL;
       $.getJSON(QueryURL, function(data){
          if (data && data != null && typeof data == "object" && data.contents && data.contents != null && typeof data.contents == "string")
          {
