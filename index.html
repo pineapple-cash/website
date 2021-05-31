@@ -744,90 +744,16 @@ Your browser does not support the audio element.
     
 
 
-    <script>
-        
-        /*
- * Basic Count Up from Date and Time
- * Author: @mrwigster / https://guwii.com/bytes/count-date-time-javascript/
- */
-window.onload = function() {
-  // Month Day, Year Hour:Minute:Second, id-of-element-container
-  countUpFromTime("May 13, 2021 12:00:00", 'countup1'); // ****** Change this line!
-};
-function countUpFromTime(countFrom, id) {
-  countFrom = new Date(countFrom).getTime();
-  var now = new Date(),
-      countFrom = new Date(countFrom),
-      timeDifference = (now - countFrom);
-    
-  var secondsInADay = 60 * 60 * 1000 * 24,
-      secondsInAHour = 60 * 60 * 1000;
-    
-  days = Math.floor(timeDifference / (secondsInADay) * 1);
-  hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
-  mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
-  secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
-
-  var idEl = document.getElementById(id);
-  idEl.getElementsByClassName('days')[0].innerHTML = days;
-
-  clearTimeout(countUpFromTime.interval);
-  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000); 
-}
-
-        </script>
-
-
-        <script type="text/javascript">
 
 
 
- fetch('https://api.allorigins.win/raw?url=https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=pnapltoken').then(function(response) {
-  // response.json() returns a promise, use the same .then syntax to work with the results
-  response.json().then(function(users){
-    // users is now our actual variable parsed from the json, so we can use it
-    users.forEach(function(user){
-      document.getElementById("twitter-followers").innerHTML = (user.followers_count)
-    });
-  });
-}).catch(err => console.error(err));
-
-
- </script>
-
+   
 
 
  
 
 
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-   var ExternalURL = "tgstat.com/en/channel/@pnapltokengroup"; // This address must not contain any leading "http://"
-   var ContentLocationInDOM = ".columns.large-2.medium-4.small-6.margin-bottom15 > div > .align-center > #text"; // If you're trying to get sub-content from the page, specify the "CSS style" jQuery syntax here, otherwise set this to "null"
 
-    $(document).ready(loadContent);
-   function loadContent()
-   {
-      var QueryURL = "https://api.codetabs.com/v1/proxy/?quest=" + ExternalURL;
-      $.getJSON(QueryURL, function(data){
-         if (data && data != null && typeof data == "object" && data.contents && data.contents != null && typeof data.contents == "string")
-         {
-            data = data.contents.replace();
-            if (data.length > 0)
-            {
-               if (ContentLocationInDOM && ContentLocationInDOM != null && ContentLocationInDOM != "null")
-               {
-                  $('#telegramMembers').html($(ContentLocationInDOM, data));
-               }
-               else
-               {
-                  $('#telegramMembers').html(data);
-               }
-            }
-         }
-      });
-   }
-</script>
 
 
 
@@ -859,7 +785,7 @@ function countUpFromTime(countFrom, id) {
                                     <i class="fab fa-telegram-plane fa-3x" style="color: #0088cc"></i>
                                 </div>
                                 <h2 class="counter">
-                                    <span id="telegramMembers">0</span>
+                                    <span id="telegram-users">0</span>
                                 </h2>
                                 <p class="description" style="color:#b9b9b9">Telegram Members</p>
                             </div>
@@ -895,7 +821,7 @@ function countUpFromTime(countFrom, id) {
                                 <div class="icon">
                                     <i class="fas fa-globe-americas fa-3x" style="color: #d3c313"></i>
                                 </div>
-                                <h2 class="counter"><span class="timeel days">1</span></h2>                                
+                                <h2 class="counter"><span class="timeel counterDays">1</span></h2>                                
                                 <p class="description" style="color:#b9b9b9">Days Live</p>
                             </div>
                         </div>
@@ -1077,6 +1003,11 @@ function countUpFromTime(countFrom, id) {
 
         <!-- End Community content  -->
 
+
+
+ 
+
+
         
 
         <!-- start footer area -->
@@ -1117,6 +1048,16 @@ function countUpFromTime(countFrom, id) {
     <script src="assets/js/vendor/jquery.js"></script>
     <!-- Bootstrap JS -->
     <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <!-- Telegram Stat JS -->
+    <script src="assets/js/telegram.js"></script>
+    <!-- Twitter Stat JS -->
+    <script src="assets/js/twitter.js"></script>
+    <!-- Launch Stat JS -->
+    <script src="assets/js/launch.js"></script>
+
+
+
+
 
     <script src="assets/js/vendor/avoid-console.js"></script>
     <script src="assets/js/vendor/waypoint.js"></script>
